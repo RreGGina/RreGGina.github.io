@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regina - QA Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">   
+    <style>
+        :root {
+            --bg-color: #0F0F0F;
+            --text-color: #FFFFFF;
+            --accent-color: #6C63FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            padding: 2rem 0;
+            border-bottom: 1px solid #333;
+        }
+nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+.hero p {
+            font-size: 1.5rem;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about {
+            padding: 6rem 0;
+            border-top: 1px solid #333;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact {
+            padding: 6rem 0;
+            text-align: center;
+        }
+ .contact a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            border: 2px solid var(--accent-color);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            transition: all 0.3s;
+            display: inline-block;
+            margin-top: 2rem;
+        }
+
+        .contact a:hover {
+            background: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid #333;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+           .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>          
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+        	<div class="avatar-container">
+        	 <img src="SOLO-310.JPG" alt=" QA " class="avatar">
+            <h1>
+    <span class="name">Regina Safiullina</span>
+    <span class="position">QA Engineer</span>
+</h1>
+           <p>Качество – не случайность, а результат тщательного тестирования</p> 
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2>Обо мне</h2>
+            <div class="about-content">
+                <div>
+                    <h3>Интересы</h3>
+                    <ul>
+                        <li>Люблю животных и помогаю приюту "Некрасовка"
+                     Instagram:sobakinazhizn </li>
+                        <li>Считаю,что ничто так не развивает ум как путешествия и спорт</li>
+                         <li>Умею вкусно готовить очпочмаки</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Навыки</h3>
+                    <ul>
+                        <li>Работа с DevTools</li>
+                        <li>Владею техниками тест-дизайна</li>
+                        <li>Детальный баг-репортинг</li>
+                        <li>Тестирую API через Postman</li>
+                        <li>SQL для верификации данных</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Давайте работать вместе</h2>
+            <a>Написать мне</a>
+            <div style="margin-top: 2rem;">
+                <a href="https://www.instagram.com/i_regginna?igsh=MWJzNmd6NjA4Ymp4" style="border: none; margin: 0 1rem;">Instagram</a>
+                <a style="border: none;">Telegram</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Regina Safiullina. Баги - это вам не шутка какая-то. Все права защищены</p>
+        </div>
+    </footer>
+</body>
+</html>	

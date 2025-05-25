@@ -1,0 +1,336 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-color: #0F0F0F;
+    --text-color: #FFFFFF;
+    --accent-color: #6C63FF;
+    --border-color: #333333;
+    --muted-text: #888888;
+    --section-spacing: 8rem;
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* Типографика */
+h1, h2, h3 {
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+/* Контейнер */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Навигация */
+nav {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    background-color: rgba(15, 15, 15, 0.95);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+nav ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: var(--transition-base);
+}
+
+nav a:hover {
+    color: var(--accent-color);
+    background: rgba(108, 99, 255, 0.1);
+}
+
+/* Герой секция */
+.hero {
+    padding: var(--section-spacing) 0;
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero h1 .name {
+    display: block;
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #fff 50%, var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero h1 .position {
+    display: block;
+    font-size: 1.8rem; /* Меньше на 40% от оригинального размера */
+    color: var(--muted-text);
+    margin-top: 0.5rem;
+    font-weight: 400;
+}
+
+.avatar-container {
+    position: relative;
+    margin-bottom: 3rem;
+    transition: var(--transition-base);
+}
+
+.avatar {
+    width: 280px;
+    height: 380px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    object-fit: cover;
+    transition: var(--transition-base);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin: 2rem 0 1.5rem;
+    background: linear-gradient(to right, #fff 50%, var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    color: var(--muted-text);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    animation: fadeIn 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+/* Секция "Обо мне" */
+.about {
+    padding: var(--section-spacing) 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.about h2 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-content h3 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.about-content p, 
+.about-content ul {
+    color: var(--muted-text);
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.about-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-content li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.about-content li:before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* Контакты */
+.contact {
+    padding: var(--section-spacing) 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.contact h2 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+}
+
+.contact a[href^="mailto:"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 2rem;
+    background: rgba(108, 99, 255, 0.1);
+    border: 2px solid var(--accent-color);
+    transition: var(--transition-base);
+    text-decoration: none;
+    color: var(--accent-color);
+    margin-top: 1.5rem;
+}
+
+.contact a[href^="mailto:"]:hover {
+    background: var(--accent-color);
+    color: var(--text-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.social-links a {
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.5rem;
+    transition: var(--transition-base);
+    color: var(--text-color);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+/* Футер */
+footer {
+    padding: 3rem 0;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--muted-text);
+    margin-top: var(--section-spacing);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    :root {
+        --section-spacing: 6rem;
+    }
+    
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    nav ul {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .avatar {
+        width: 220px;
+        height: 300px;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact h2,
+    .about h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .avatar {
+        width: 180px;
+        height: 240px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 768px) {
+    .hero h1 .name {
+        font-size: 2.5rem;
+    }
+    .hero h1 .position {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 .name {
+        font-size: 2rem;
+    }
+    .hero h1 .position {
+        font-size: 1.2rem;
+    }
+}
